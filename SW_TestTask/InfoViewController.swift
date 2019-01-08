@@ -8,23 +8,30 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
-
+class InfoViewController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var episodeId: UILabel!
+    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var director: UILabel!
+    @IBOutlet weak var crawl: UITextView!
+    
+    public var movie: Movie?
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        displayMovieInfo()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func displayMovieInfo() {
+        if let movie = movie {
+            movieTitle.text = movie.title
+            episodeId.text = "\(movie.episodeId)"
+            releaseDate.text = "\(Calendar.current.component(.day, from: movie.releaseDate))/\(Calendar.current.component(.month, from: movie.releaseDate))/\(Calendar.current.component(.year, from: movie.releaseDate))"
+            director.text = movie.director
+            crawl.text = movie.crawl
+        }
     }
-    */
-
 }

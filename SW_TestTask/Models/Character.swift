@@ -8,14 +8,15 @@
 
 import Foundation
 
-//-- Character info screen provides the following information: Name, gender, birth date, birth, home world, species, related movies
-
-
 struct Character {
     var name: String
     var gender: String
-    var birthDate: Date
+    var birthDate: String
     var homeWorld: String
     var species: [String]
     var relatedMovies: [String]
+    
+    static func empty() -> Character {
+        return Character(name: "", gender: "", birthDate: "", homeWorld: "", species: [String](), relatedMovies: [String]())
+    }
 }

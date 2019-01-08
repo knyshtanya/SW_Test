@@ -9,22 +9,27 @@
 import UIKit
 
 class PlanetInfoViewController: UIViewController {
+    
+    public var planet: Planet?
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var population: UILabel!
+    @IBOutlet weak var climate: UILabel!
+    @IBOutlet weak var diameter: UILabel!
+    @IBOutlet weak var terrain: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        guard let planet = planet else { return }
+        navigationItem.title = "\(planet.name)"
+        displayPlanetInfo()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func displayPlanetInfo() {
+        name.text = planet?.name
+        population.text = planet?.population
+        climate.text = planet?.climate
+        diameter.text = planet?.diameter
+        terrain.text = planet?.terrain
     }
-    */
-
 }

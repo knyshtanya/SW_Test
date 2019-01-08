@@ -8,20 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		D423842E21E13B970062D63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423842D21E13B970062D63A /* AppDelegate.swift */; };
-		D423843021E13B970062D63A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423842F21E13B970062D63A /* ViewController.swift */; };
 		D423843321E13B970062D63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D423843121E13B970062D63A /* Main.storyboard */; };
 		D423843521E13B9A0062D63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D423843421E13B9A0062D63A /* Assets.xcassets */; };
 		D423843821E13B9A0062D63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D423843621E13B9A0062D63A /* LaunchScreen.storyboard */; };
+		D423844021E1402E0062D63A /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423843F21E1402E0062D63A /* MoviesTableViewController.swift */; };
+		D423844221E149C90062D63A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423844121E149C90062D63A /* InfoViewController.swift */; };
+		D423844421E2040A0062D63A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423844321E2040A0062D63A /* Movie.swift */; };
+		D423844A21E238780062D63A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423844921E238780062D63A /* CharactersViewController.swift */; };
+		D423844C21E23A530062D63A /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423844B21E23A530062D63A /* CharacterTableViewCell.swift */; };
+		D423844E21E24D500062D63A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423844D21E24D500062D63A /* Character.swift */; };
+		D423845121E25A9B0062D63A /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */; };
+		D423845621E26BCD0062D63A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845521E26BCD0062D63A /* MovieTableViewCell.swift */; };
+		D423845821E35E780062D63A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845721E35E780062D63A /* Planet.swift */; };
+		D423845A21E366C90062D63A /* PlanetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845921E366C90062D63A /* PlanetInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D423842A21E13B970062D63A /* SW_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SW_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D423842D21E13B970062D63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D423842F21E13B970062D63A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D423843221E13B970062D63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D423843421E13B9A0062D63A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D423843721E13B9A0062D63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D423843921E13B9A0062D63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D423843F21E1402E0062D63A /* MoviesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
+		D423844121E149C90062D63A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		D423844321E2040A0062D63A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		D423844921E238780062D63A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		D423844B21E23A530062D63A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		D423844D21E24D500062D63A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
+		D423845521E26BCD0062D63A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		D423845721E35E780062D63A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		D423845921E366C90062D63A /* PlanetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +72,39 @@
 		D423842C21E13B970062D63A /* SW_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				D423845421E26BA70062D63A /* Cells */,
+				D423844F21E24E010062D63A /* Models */,
 				D423842D21E13B970062D63A /* AppDelegate.swift */,
-				D423842F21E13B970062D63A /* ViewController.swift */,
+				D423843F21E1402E0062D63A /* MoviesTableViewController.swift */,
+				D423844121E149C90062D63A /* InfoViewController.swift */,
+				D423844921E238780062D63A /* CharactersViewController.swift */,
+				D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */,
+				D423845921E366C90062D63A /* PlanetInfoViewController.swift */,
 				D423843121E13B970062D63A /* Main.storyboard */,
 				D423843421E13B9A0062D63A /* Assets.xcassets */,
 				D423843621E13B9A0062D63A /* LaunchScreen.storyboard */,
 				D423843921E13B9A0062D63A /* Info.plist */,
 			);
 			path = SW_TestTask;
+			sourceTree = "<group>";
+		};
+		D423844F21E24E010062D63A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D423844321E2040A0062D63A /* Movie.swift */,
+				D423844D21E24D500062D63A /* Character.swift */,
+				D423845721E35E780062D63A /* Planet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D423845421E26BA70062D63A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D423844B21E23A530062D63A /* CharacterTableViewCell.swift */,
+				D423845521E26BCD0062D63A /* MovieTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D423843021E13B970062D63A /* ViewController.swift in Sources */,
+				D423844021E1402E0062D63A /* MoviesTableViewController.swift in Sources */,
+				D423845121E25A9B0062D63A /* CharacterInfoViewController.swift in Sources */,
+				D423844C21E23A530062D63A /* CharacterTableViewCell.swift in Sources */,
+				D423844221E149C90062D63A /* InfoViewController.swift in Sources */,
+				D423845A21E366C90062D63A /* PlanetInfoViewController.swift in Sources */,
+				D423844A21E238780062D63A /* CharactersViewController.swift in Sources */,
+				D423845821E35E780062D63A /* Planet.swift in Sources */,
+				D423844421E2040A0062D63A /* Movie.swift in Sources */,
 				D423842E21E13B970062D63A /* AppDelegate.swift in Sources */,
+				D423845621E26BCD0062D63A /* MovieTableViewCell.swift in Sources */,
+				D423844E21E24D500062D63A /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3K4E625YXQ;
 				INFOPLIST_FILE = SW_TestTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3K4E625YXQ;
 				INFOPLIST_FILE = SW_TestTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
