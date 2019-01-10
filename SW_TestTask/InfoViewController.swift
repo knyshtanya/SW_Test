@@ -29,7 +29,7 @@ class InfoViewController: UIViewController, UITextViewDelegate {
         if let movie = movie {
             movieTitle.text = movie.title
             episodeId.text = "\(movie.episodeId)"
-            releaseDate.text = "\(Calendar.current.component(.day, from: movie.releaseDate))/\(Calendar.current.component(.month, from: movie.releaseDate))/\(Calendar.current.component(.year, from: movie.releaseDate))"
+            releaseDate.text = "\(movie.releaseDate)"
             director.text = movie.director
             crawl.text = movie.crawl
         }

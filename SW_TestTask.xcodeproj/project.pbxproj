@@ -18,9 +18,12 @@
 		D423844C21E23A530062D63A /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423844B21E23A530062D63A /* CharacterTableViewCell.swift */; };
 		D423844E21E24D500062D63A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423844D21E24D500062D63A /* Character.swift */; };
 		D423845121E25A9B0062D63A /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */; };
-		D423845621E26BCD0062D63A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845521E26BCD0062D63A /* MovieTableViewCell.swift */; };
 		D423845821E35E780062D63A /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845721E35E780062D63A /* Planet.swift */; };
 		D423845A21E366C90062D63A /* PlanetInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845921E366C90062D63A /* PlanetInfoViewController.swift */; };
+		D423845C21E512D20062D63A /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845B21E512D20062D63A /* Loader.swift */; };
+		D423845E21E65D090062D63A /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845D21E65D090062D63A /* SearchTableViewController.swift */; };
+		D423846021E685C00062D63A /* SegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423845F21E685C00062D63A /* SegmentViewController.swift */; };
+		D423846221E7D19B0062D63A /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423846121E7D19B0062D63A /* Species.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +40,12 @@
 		D423844B21E23A530062D63A /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		D423844D21E24D500062D63A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
-		D423845521E26BCD0062D63A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		D423845721E35E780062D63A /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		D423845921E366C90062D63A /* PlanetInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetInfoViewController.swift; sourceTree = "<group>"; };
+		D423845B21E512D20062D63A /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		D423845D21E65D090062D63A /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		D423845F21E685C00062D63A /* SegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewController.swift; sourceTree = "<group>"; };
+		D423846121E7D19B0062D63A /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,8 @@
 				D423844F21E24E010062D63A /* Models */,
 				D423842D21E13B970062D63A /* AppDelegate.swift */,
 				D423843F21E1402E0062D63A /* MoviesTableViewController.swift */,
+				D423845D21E65D090062D63A /* SearchTableViewController.swift */,
+				D423845F21E685C00062D63A /* SegmentViewController.swift */,
 				D423844121E149C90062D63A /* InfoViewController.swift */,
 				D423844921E238780062D63A /* CharactersViewController.swift */,
 				D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */,
@@ -94,6 +102,8 @@
 				D423844321E2040A0062D63A /* Movie.swift */,
 				D423844D21E24D500062D63A /* Character.swift */,
 				D423845721E35E780062D63A /* Planet.swift */,
+				D423845B21E512D20062D63A /* Loader.swift */,
+				D423846121E7D19B0062D63A /* Species.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -102,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				D423844B21E23A530062D63A /* CharacterTableViewCell.swift */,
-				D423845521E26BCD0062D63A /* MovieTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -180,14 +189,17 @@
 			files = (
 				D423844021E1402E0062D63A /* MoviesTableViewController.swift in Sources */,
 				D423845121E25A9B0062D63A /* CharacterInfoViewController.swift in Sources */,
+				D423846021E685C00062D63A /* SegmentViewController.swift in Sources */,
+				D423845C21E512D20062D63A /* Loader.swift in Sources */,
 				D423844C21E23A530062D63A /* CharacterTableViewCell.swift in Sources */,
 				D423844221E149C90062D63A /* InfoViewController.swift in Sources */,
 				D423845A21E366C90062D63A /* PlanetInfoViewController.swift in Sources */,
 				D423844A21E238780062D63A /* CharactersViewController.swift in Sources */,
+				D423846221E7D19B0062D63A /* Species.swift in Sources */,
 				D423845821E35E780062D63A /* Planet.swift in Sources */,
 				D423844421E2040A0062D63A /* Movie.swift in Sources */,
 				D423842E21E13B970062D63A /* AppDelegate.swift in Sources */,
-				D423845621E26BCD0062D63A /* MovieTableViewCell.swift in Sources */,
+				D423845E21E65D090062D63A /* SearchTableViewController.swift in Sources */,
 				D423844E21E24D500062D63A /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

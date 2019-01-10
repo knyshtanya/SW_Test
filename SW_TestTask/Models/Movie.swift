@@ -6,17 +6,32 @@
 //  Copyright © 2019 Tatiana Knysh. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct Movie {
+struct Movie: Codable {
+    
     var title: String
     var episodeId: Int
-    var releaseDate: Date
+    var releaseDate: String
     var director: String
     var crawl: String
     var characters: [String]
     
-    static func empty() -> Movie {
-        return Movie(title: "", episodeId: 0, releaseDate: Date(), director: "", crawl: "", characters: [String]())
+    enum CodingKeys: String, CodingKey {
+        case title
+        case episodeId = "episode_id"
+        case releaseDate = "release_date"
+        case director
+        case crawl = "opening_crawl"
+        case characters
     }
+    
+    static func empty() -> Movie {
+        return Movie(title: "", episodeId: 0, releaseDate: "", director: "", crawl: "", characters: [String]())
+    }
+}
+
+struct MoviesResult: Codable {
+    var next: URL?
+    var results: [Movie]
 }

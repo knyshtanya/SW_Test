@@ -21,6 +21,7 @@ class CharacterInfoViewController: UIViewController, UITableViewDataSource, UITa
     private var movies = [Movie]()
     private var homeWorld = Planet.empty()
     public var character: Character?
+    private let loader = Loader()
     
     // MARK: - Lifecycle
     
@@ -50,99 +51,40 @@ class CharacterInfoViewController: UIViewController, UITableViewDataSource, UITa
         fetchAllRelatedMovies()
     }
     
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Fetches
     
     private func fetchHomeWorld(url: String) {
         guard let url = URL(string: url) else { return }
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                    if let name = json["name"] as? String {
-                        self.homeWorld.name = name
-                    }
-                    if let population = json["population"] as? String {
-                        self.homeWorld.population = population
-                    }
-                    if let climate = json["climate"] as? String {
-                        self.homeWorld.climate = climate
-                    }
-                    if let diameter = json["diameter"] as? String {
-                        self.homeWorld.diameter = diameter
-                    }
-                    if let terrain = json["terrain"] as? String {
-                        self.homeWorld.terrain = terrain
-                    }
-                }
-            }
-            catch {
-                print(error.localizedDescription)
-            }
+        loader.fetchEntity(url: url, entity: Planet.self) { [weak self] result in
+            self?.homeWorld = result ?? Planet.empty()
             DispatchQueue.main.async {
-                self.homeWorldButton.setTitle(self.homeWorld.name, for: .normal)
+                self?.homeWorldButton.setTitle(self?.homeWorld.name, for: .normal)
             }
         }
-        task.resume()
     }
     
     private func fetchSpecies(url: String) {
         guard let url = URL(string: url) else { return }
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                    if let name = json["name"] as? String {
-                        self.fetchedSpecies = name
-                    }
-                }
-            }
-            catch {
-                print(error.localizedDescription)
-            }
+        loader.fetchEntity(url: url, entity: Species.self) { [weak self] result in
+            self?.fetchedSpecies = result?.name
             DispatchQueue.main.async {
-                self.species.text = self.fetchedSpecies
+                self?.species.text = self?.fetchedSpecies
             }
         }
-        task.resume()
     }
     
     private func fetchRelatedMovie(url: String) {
         guard let url = URL(string: url) else { return }
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                    var movie = Movie.empty()
-                    
-                    if let title = json["title"] as? String {
-                        movie.title = title
-                    }
-                    if let episodeId = json["episode_id"] as? Int {
-                        movie.episodeId = episodeId
-                    }
-                    if let releaseDate = json["release_date"] as? Date {
-                        movie.releaseDate = releaseDate
-                    }
-                    if let director = json["director"] as? String {
-                        movie.director = director
-                    }
-                    if let crawl = json["opening_crawl"] as? String {
-                        movie.crawl = crawl
-                    }
-                    if let characters = json["characters"] as? [String] {
-                        movie.characters = characters
-                    }
-                    self.movies.append(movie)
-                }
-            }
-            catch {
-                print(error.localizedDescription)
-            }
+        loader.fetchEntity(url: url, entity: Movie.self) { [weak self] result in
+            self?.movies.append(result ?? Movie.empty())
             DispatchQueue.main.async {
-                self.movieTableView.reloadData()
+                self?.movieTableView.reloadData()
             }
         }
-        task.resume()
     }
     
     private func fetchAllRelatedMovies() {
@@ -159,7 +101,7 @@ class CharacterInfoViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "moviesCell", for: indexPath) as? MovieTableViewCell else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "moviesCell", for: indexPath)
         cell.textLabel?.text = movies[indexPath.row].title
         return cell
     }
@@ -168,8 +110,7 @@ class CharacterInfoViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? UITabBarController else { return }
-        guard let infoVC = tabBarVC.viewControllers?[0] as? InfoViewController else { return }
+        guard let infoVC = storyboard.instantiateViewController(withIdentifier: "infoVC") as? InfoViewController else { return }
         infoVC.movie = movies[indexPath.row]
         navigationController?.pushViewController(infoVC, animated: true)
     }

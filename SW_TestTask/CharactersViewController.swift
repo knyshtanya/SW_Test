@@ -15,14 +15,15 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     private var characters = [Character]()
     private let searchController = UISearchController(searchResultsController: nil)
     private var filteredCharacters = [Character]()
+    private let loader = Loader()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        fetchAllCharacters()
         setupSearchController()
+        fetchAllCharacters()
     }
     
     // MARK: - Search
@@ -73,42 +74,14 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private func fetchCharacter(url: String) {
         guard let url = URL(string: url) else { return }
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data else { return }
-            do {
-                if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                    var character = Character.empty()
-                    if let name = json["name"] as? String {
-                        character.name = name
-                    }
-                    if let gender = json["gender"] as? String {
-                        character.gender = gender
-                    }
-                    if let birthDate = json["birth_year"] as? String {
-                        character.birthDate = birthDate
-                    }
-                    if let homeWorld = json["homeworld"] as? String {
-                        character.homeWorld = homeWorld
-                    }
-                    if let species = json["species"] as? [String] {
-                        character.species = species
-                    }
-                    if let relatedMovies = json["films"] as? [String] {
-                        character.relatedMovies = relatedMovies
-                    }
-                    self.characters.append(character)
-                }
-            }
-            catch {
-                print(error.localizedDescription)
-            }
+        loader.fetchEntity(url: url, entity: Character.self) { [weak self] result in
+            self?.characters.append(result ?? Character.empty())
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
-        task.resume()
     }
-    
+        
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,6 +100,6 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let characterInfoVC = storyboard.instantiateViewController(withIdentifier: "CharacterVC") as? CharacterInfoViewController else { return }
         characterInfoVC.character = characters[indexPath.row]
-        navigationController?.pushViewController(characterInfoVC, animated: true)
+        parent?.navigationController?.pushViewController(characterInfoVC, animated: true)
     }
 }

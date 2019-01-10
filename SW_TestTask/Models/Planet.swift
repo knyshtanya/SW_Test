@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Planet {
+struct Planet: Codable {
     var name: String
     var population: String
     var climate: String
     var diameter: String
     var terrain: String
-    
+        
     static func empty() -> Planet {
         return Planet(name: "", population: "", climate: "", diameter: "", terrain: "")
     }
