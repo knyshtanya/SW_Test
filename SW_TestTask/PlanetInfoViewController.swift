@@ -18,12 +18,16 @@ class PlanetInfoViewController: UIViewController {
     @IBOutlet weak var diameter: UILabel!
     @IBOutlet weak var terrain: UILabel!
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let planet = planet else { return }
         navigationItem.title = "\(planet.name)"
         displayPlanetInfo()
     }
+    
+    // MARK: - Actions
     
     private func displayPlanetInfo() {
         name.text = planet?.name
