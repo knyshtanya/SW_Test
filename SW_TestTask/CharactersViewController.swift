@@ -100,7 +100,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let characterInfoVC = storyboard.instantiateViewController(withIdentifier: "CharacterVC") as? CharacterInfoViewController else { return }
-        characterInfoVC.character = characters[indexPath.row]
+        characterInfoVC.character = searchController.isActive ? filteredCharacters[indexPath.row]: characters[indexPath.row]
         parent?.navigationController?.pushViewController(characterInfoVC, animated: true)
     }
 }

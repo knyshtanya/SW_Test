@@ -24,13 +24,13 @@ class InfoViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayMovieInfo()
-        navigationItem.title = movie?.title 
+        navigationItem.title = movie?.title
+        crawlView.backgroundColor = .black
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        crawlView.backgroundColor = .black
         animateCrawl()
     }
     
