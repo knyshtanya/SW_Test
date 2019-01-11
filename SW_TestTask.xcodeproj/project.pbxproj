@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D406D87521E7E39A0061290D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406D87421E7E39A0061290D /* Result.swift */; };
 		D423842E21E13B970062D63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423842D21E13B970062D63A /* AppDelegate.swift */; };
 		D423843321E13B970062D63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D423843121E13B970062D63A /* Main.storyboard */; };
 		D423843521E13B9A0062D63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D423843421E13B9A0062D63A /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D406D87421E7E39A0061290D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		D423842A21E13B970062D63A /* SW_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SW_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D423842D21E13B970062D63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D423843221E13B970062D63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +59,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D406D87621E932670061290D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D423843F21E1402E0062D63A /* MoviesTableViewController.swift */,
+				D423845D21E65D090062D63A /* SearchTableViewController.swift */,
+				D423845F21E685C00062D63A /* SegmentViewController.swift */,
+				D423844121E149C90062D63A /* InfoViewController.swift */,
+				D423844921E238780062D63A /* CharactersViewController.swift */,
+				D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */,
+				D423845921E366C90062D63A /* PlanetInfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D423842121E13B970062D63A = {
 			isa = PBXGroup;
 			children = (
@@ -80,16 +92,10 @@
 		D423842C21E13B970062D63A /* SW_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				D423842D21E13B970062D63A /* AppDelegate.swift */,
 				D423845421E26BA70062D63A /* Cells */,
 				D423844F21E24E010062D63A /* Models */,
-				D423842D21E13B970062D63A /* AppDelegate.swift */,
-				D423843F21E1402E0062D63A /* MoviesTableViewController.swift */,
-				D423845D21E65D090062D63A /* SearchTableViewController.swift */,
-				D423845F21E685C00062D63A /* SegmentViewController.swift */,
-				D423844121E149C90062D63A /* InfoViewController.swift */,
-				D423844921E238780062D63A /* CharactersViewController.swift */,
-				D423845021E25A9B0062D63A /* CharacterInfoViewController.swift */,
-				D423845921E366C90062D63A /* PlanetInfoViewController.swift */,
+				D406D87621E932670061290D /* Controllers */,
 				D423843121E13B970062D63A /* Main.storyboard */,
 				D423843421E13B9A0062D63A /* Assets.xcassets */,
 				D423843621E13B9A0062D63A /* LaunchScreen.storyboard */,
@@ -104,9 +110,8 @@
 				D423844321E2040A0062D63A /* Movie.swift */,
 				D423844D21E24D500062D63A /* Character.swift */,
 				D423845721E35E780062D63A /* Planet.swift */,
-				D423845B21E512D20062D63A /* Loader.swift */,
 				D423846121E7D19B0062D63A /* Species.swift */,
-				D406D87421E7E39A0061290D /* Result.swift */,
+				D423845B21E512D20062D63A /* Loader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,7 +201,6 @@
 				D423845C21E512D20062D63A /* Loader.swift in Sources */,
 				D423844C21E23A530062D63A /* CharacterTableViewCell.swift in Sources */,
 				D423844221E149C90062D63A /* InfoViewController.swift in Sources */,
-				D406D87521E7E39A0061290D /* Result.swift in Sources */,
 				D423845A21E366C90062D63A /* PlanetInfoViewController.swift in Sources */,
 				D423844A21E238780062D63A /* CharactersViewController.swift in Sources */,
 				D423846221E7D19B0062D63A /* Species.swift in Sources */,

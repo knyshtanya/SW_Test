@@ -51,10 +51,6 @@ class CharacterInfoViewController: UIViewController, UITableViewDataSource, UITa
         fetchAllRelatedMovies()
     }
     
-    @IBAction func close(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: - Fetches
     
     private func fetchHomeWorld(url: String) {
@@ -113,5 +109,6 @@ class CharacterInfoViewController: UIViewController, UITableViewDataSource, UITa
         guard let infoVC = storyboard.instantiateViewController(withIdentifier: "infoVC") as? InfoViewController else { return }
         infoVC.movie = movies[indexPath.row]
         navigationController?.pushViewController(infoVC, animated: true)
+        movieTableView.deselectRow(at: indexPath, animated: true)
     }
 }

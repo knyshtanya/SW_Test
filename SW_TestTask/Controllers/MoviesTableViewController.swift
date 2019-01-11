@@ -11,14 +11,12 @@ import UIKit
 class MoviesTableViewController: UITableViewController {
     
     private var movies = [Movie]()
-    private var task: URLSessionTask?
     private var loader = Loader()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "SW Movies"
         fetchMovies()
     }
     
@@ -26,8 +24,8 @@ class MoviesTableViewController: UITableViewController {
     
     private func fetchMovies() {
         guard let url = URL(string: "https://swapi.co/api/films/") else { return }
-        loader.fetchEntity(url: url, entity: Result<Movie>.self) { [weak self] result in
-            self?.movies = result?.results ?? [Movie]()
+        loader.fetchEntities(url: url, entity: [Movie].self) { [weak self] result in
+            self?.movies = result ?? [Movie]()
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }

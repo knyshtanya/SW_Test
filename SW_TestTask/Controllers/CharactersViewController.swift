@@ -39,7 +39,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        filteredCharacters = searchText.isEmpty ? characters : characters.filter { return $0.name.lowercased().contains(searchText.lowercased()) }
+        filteredCharacters = searchText.isEmpty ? characters : characters.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         tableView.reloadData()
     }
     

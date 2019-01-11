@@ -72,5 +72,4 @@ class SegmentViewController: UIViewController {
             charactersVC.movie = movie
         }
     }
-
 }
