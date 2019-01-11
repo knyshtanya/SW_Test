@@ -9,11 +9,11 @@
 import Foundation
 
 struct Planet: Codable {
-    var name: String
-    var population: String
-    var climate: String
-    var diameter: String
-    var terrain: String
+    let name: String
+    let population: String
+    let climate: String
+    let diameter: String
+    let terrain: String
         
     static func empty() -> Planet {
         return Planet(name: "", population: "", climate: "", diameter: "", terrain: "")

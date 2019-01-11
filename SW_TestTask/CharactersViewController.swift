@@ -32,6 +32,7 @@ class CharactersViewController: UIViewController, UITableViewDelegate, UITableVi
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+        searchController.hidesNavigationBarDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
     }

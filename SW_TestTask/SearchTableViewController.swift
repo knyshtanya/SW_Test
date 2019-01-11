@@ -30,7 +30,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
         guard let url = URL(string: "https://swapi.co/api/people/?search=\(searchText.lowercased())") else { return }
-        loader.fetchEntity(url: url, entity: CharacterResult.self) { [weak self] result in
+        loader.fetchEntity(url: url, entity: Result<Character>.self) { [weak self] result in
             self?.filteredCharacters = searchText.isEmpty ? [Character]() : result?.results ?? [Character]()
             DispatchQueue.main.async {
                 self?.tableView.reloadData()

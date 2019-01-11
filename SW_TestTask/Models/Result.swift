@@ -1,5 +1,5 @@
 //
-//  Species.swift
+//  Result.swift
 //  SW_TestTask
 //
 //  Created by Tatiana Knysh on 10.01.2019.
@@ -8,10 +8,7 @@
 
 import Foundation
 
-struct Species: Codable {
-    let name: String
-    
-    static func empty() -> Species {
-        return Species(name: "")
-    }
+struct Result<T: Codable>: Codable {
+    var next: URL?
+    var results: [T]
 }

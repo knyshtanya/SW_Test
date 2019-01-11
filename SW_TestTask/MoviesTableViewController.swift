@@ -26,7 +26,7 @@ class MoviesTableViewController: UITableViewController {
     
     private func fetchMovies() {
         guard let url = URL(string: "https://swapi.co/api/films/") else { return }
-        loader.fetchEntity(url: url, entity: MoviesResult.self) { [weak self] result in
+        loader.fetchEntity(url: url, entity: Result<Movie>.self) { [weak self] result in
             self?.movies = result?.results ?? [Movie]()
             DispatchQueue.main.async {
                 self?.tableView.reloadData()

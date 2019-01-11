@@ -23,7 +23,10 @@ class InfoViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayMovieInfo()
+        navigationItem.title = movie?.title 
     }
+    
+    // MARK: - Actions
     
     private func displayMovieInfo() {
         if let movie = movie {
